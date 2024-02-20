@@ -29,7 +29,6 @@ public class Customer {
     private Date birthDate;
 
     @OneToMany(mappedBy = "customer")
-    @JsonIgnoreProperties("tickets")
     private List<Ticket> tickets = new ArrayList<>();
 
 

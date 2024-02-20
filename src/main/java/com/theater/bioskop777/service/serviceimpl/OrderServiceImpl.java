@@ -40,6 +40,7 @@ public class OrderServiceImpl implements OrderService {
         this.theaterRepository = theaterRepository;
     }
 
+    @Transactional
     @Override
     public ResponseEntity<?> orderTicket(OrderRequest orderRequest) {
 
