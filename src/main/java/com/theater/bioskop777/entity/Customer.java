@@ -2,11 +2,13 @@ package com.theater.bioskop777.entity;
 
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,9 +26,10 @@ public class Customer {
     private String name;
 
     @JsonFormat(pattern = "yyyy-MM-dd")
-    private String birthDate;
+    private Date birthDate;
 
     @OneToMany(mappedBy = "customer")
+    @JsonIgnoreProperties("tickets")
     private List<Ticket> tickets = new ArrayList<>();
 
 

@@ -1,5 +1,6 @@
 package com.theater.bioskop777.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -20,11 +21,5 @@ public class Seat {
     @ManyToOne
     @JoinColumn(name = "theater_id")
     private Theater theater;
-
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "ticket_id")
-    private Ticket ticket;
-
-
 
 }

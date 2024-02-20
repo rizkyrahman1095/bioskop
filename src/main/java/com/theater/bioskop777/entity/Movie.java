@@ -2,6 +2,8 @@ package com.theater.bioskop777.entity;
 
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -23,7 +25,7 @@ public class Movie {
 
     private String title;
 
-    private String duration;
+    private Integer duration;
 
     @Column(name = "show_date")
     @JsonFormat(pattern = "yyyy-MM-dd")

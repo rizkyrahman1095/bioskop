@@ -17,6 +17,8 @@ public class Ticket {
     @ManyToOne
     @JoinColumn(name = "customer_id")
     private Customer customer;
-    @OneToOne(mappedBy = "ticket")
+
+    @OneToOne()
+    @JoinColumn(name = "seat_id")
     private Seat seat;
 }

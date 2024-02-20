@@ -1,5 +1,6 @@
 package com.theater.bioskop777.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -24,6 +25,7 @@ public class Theater {
     @ManyToOne
     @JoinColumn(name = "movie_id")
     private Movie movie;
+
     @OneToMany(mappedBy = "theater")
     List<Seat> seatList = new ArrayList<>();
 }
